@@ -7,7 +7,9 @@
       </h4>
       <p>{{ person.text }}</p>
     </div>
-    <button @click="addNewTablet">препарат 1</button>
+    <button @click="changeTablet">Препарат 1</button>
+    <button @click="changeTablet">Препарат 2</button>
+    <button @click="changeTablet">Препарат 3</button>
   </div>
 </template>
 
@@ -16,7 +18,7 @@ import peopleList from "./peopleList";
 export default {
   data() {
     return {
-      toadd: "",
+      tablet: { name: "aspirine" },
     };
   },
   components: {
@@ -27,13 +29,15 @@ export default {
     index: Number,
   },
   methods: {
-    addNewTablet() {
-      console.log("tab");
-      this.person.tablet.push({
-        id: 12,
-      });
+    changeTablet() {
+      this.person.tablet = "aspirine";
     },
   },
+  // methods: {
+  //   addNewTablet() {
+  //     this.person.push(this.tablet);
+  //   },
+  // },
 };
 </script>
 
