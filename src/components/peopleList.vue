@@ -1,26 +1,22 @@
 <template>
   <div>
-    <carusel :carusel_data="people" />
-    <people-cart
-      v-for="(person, i) in people"
+    <peopleCart
+      v-for="(person, i) in peopleList"
       :key="person.id"
       :person="person"
       :index="i + 1"
-    ></people-cart>
+    />
   </div>
 </template>
 
 <script>
 import peopleCart from "./peopleCart.vue";
-import carusel from "./carusel.vue";
-components: {
-  peopleCart;
-}
+
 export default {
-  components: { peopleCart, carusel },
+  components: { peopleCart },
   data() {
     return {
-      people: [
+      peopleList: [
         {
           id: 1,
           img:
@@ -29,6 +25,7 @@ export default {
           age: 75,
           text:
             "Дитя, дай бабусі ліки від тиску за цим рецептом, але не дорогих, тих, що дешевші!",
+          tablet: [],
         },
         {
           id: 2,
@@ -38,6 +35,17 @@ export default {
           age: 55,
           text:
             "Лікар призначив препарат від артеріальної гіпертензії, а бренд дорого коштує. Тому мені потрібен аналог з хорошою ефективністю та приємною ціною.",
+          tablet: [],
+        },
+        {
+          id: 3,
+          img:
+            "https://media.istockphoto.com/photos/portrait-of-a-beautiful-young-woman-picture-id909699192?k=6&m=909699192&s=612x612&w=0&h=hjsXFVj7cTFLfyU-OSCrFkDOhL_1-Hq3j18f9tM_tvY=",
+          name: "Марія",
+          age: 19,
+          text:
+            " Бабуся приймає брендовий препарат від болю в суглобах, він допомагає, але занадто дорогий. У Вас є якісний аналог з нижчою ціною? Якщо ні — давайте бренд.",
+          tablet: [],
         },
       ],
     };

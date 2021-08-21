@@ -3,21 +3,36 @@
     <img :src="person.img" alt="Avatar" style="width:300px" />
     <div class="container">
       <h4>
-        {{ index }}. <b>{{ person.name }}, {{ person.age }} років</b>
+        <b>{{ person.name }}, {{ person.age }} років</b>
       </h4>
       <p>{{ person.text }}</p>
     </div>
+    <button @click="addNewTablet">препарат 1</button>
   </div>
 </template>
 
 <script>
+import peopleList from "./peopleList";
 export default {
+  data() {
+    return {
+      toadd: "",
+    };
+  },
+  components: {
+    peopleList,
+  },
   props: {
-    person: Object,
+    person: { type: Object, required: true },
     index: Number,
   },
-  data() {
-    return {};
+  methods: {
+    addNewTablet() {
+      console.log("tab");
+      this.person.tablet.push({
+        id: 12,
+      });
+    },
   },
 };
 </script>
@@ -28,7 +43,7 @@ export default {
   height: 420px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  position: absolute;
+  position: relative;
   left: 47.92%;
   right: 14.58%;
   top: 12.7%;

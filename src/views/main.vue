@@ -1,7 +1,8 @@
 <template>
   <div>
-    <people-cart></people-cart>
-    <people-list></people-list>
+    <div>
+      <peopleList />
+    </div>
     <div class="sidebar">
       <router-link to="/"
         ><img
@@ -18,11 +19,10 @@
 </template>
 
 <script>
-import peopleCart from "../components/peopleCart";
 import peopleList from "../components/peopleList";
 
 export default {
-  components: { peopleCart, peopleList },
+  components: { peopleList },
   name: "Main",
   data() {
     return {};
