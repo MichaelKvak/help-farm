@@ -7,20 +7,12 @@
       </h4>
       <p>{{ person.text }}</p>
     </div>
-    <button @click="changeTablet">Препарат 1</button>
-    <button @click="changeTablet">Препарат 2</button>
-    <button @click="changeTablet">Препарат 3</button>
   </div>
 </template>
 
 <script>
 import peopleList from "./peopleList";
 export default {
-  data() {
-    return {
-      tablet: { name: "aspirine" },
-    };
-  },
   components: {
     peopleList,
   },
@@ -28,16 +20,6 @@ export default {
     person: { type: Object, required: true },
     index: Number,
   },
-  methods: {
-    changeTablet() {
-      this.person.tablet = "aspirine";
-    },
-  },
-  // methods: {
-  //   addNewTablet() {
-  //     this.person.push(this.tablet);
-  //   },
-  // },
 };
 </script>
 

@@ -14,7 +14,27 @@
       <a @click="reloadPage">
         <img src="../assets/refresh.png" width="50" height="50" class="ref" />
       </a>
+      <div class="res">
+        <img
+          src="../assets/sad.png"
+          width="30px"
+          height="30px"
+          class="imgSad"
+        />
+        <span class="textRes">{{ click }}</span>
+      </div>
+      <div class="ress">
+        <img
+          src="../assets/happy.png"
+          width="30px"
+          height="30px"
+          class="imgSad"
+        />
+        <span class="textRes">{{ value }}</span>
+      </div>
     </div>
+    <button @click="click++">Препарат 1</button>
+    <button @click="value++">Препарат 2</button>
   </div>
 </template>
 
@@ -25,7 +45,10 @@ export default {
   components: { peopleList },
   name: "Main",
   data() {
-    return {};
+    return {
+      click: "",
+      value: "",
+    };
   },
 
   methods: {
@@ -55,5 +78,46 @@ export default {
   position: absolute;
   left: 65px;
   top: 85px;
+}
+.res {
+  background-color: #ffffff;
+  border: none;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  position: absolute;
+  top: 550px;
+  right: 250px;
+}
+.ress {
+  background-color: #ffffff;
+  border: none;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+  position: absolute;
+  top: 550px;
+  right: 350px;
+}
+
+.imgSad {
+  left: 5.26%;
+  right: 63.16%;
+  top: 12.5%;
+  bottom: 12.5%;
+  text-align: center;
+}
+.textRes {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 44px;
+  align-items: right;
+  text-align: center;
 }
 </style>

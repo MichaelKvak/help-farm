@@ -53,4 +53,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.Val {
+  position: absolute;
+  left: 65px;
+  top: 255px;
+}
+</style>
