@@ -1,5 +1,6 @@
 <template>
   <div class="card">
+    <div class="outline" v-show="visible">Препарат</div>
     <img :src="person.img" alt="Avatar" style="width:300px" />
     <div class="container">
       <h4>
@@ -16,6 +17,12 @@ export default {
   components: {
     peopleList,
   },
+  data() {
+    return {
+      visible: true,
+    };
+  },
+
   props: {
     person: { type: Object, required: true },
     index: Number,
@@ -66,5 +73,14 @@ export default {
 .item-enter,
 .item-leave-to {
   opacity: 0;
+}
+.outline {
+  border: 3px solid #8049c7;
+  padding: 0 10px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 </style>
