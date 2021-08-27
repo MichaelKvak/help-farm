@@ -43,13 +43,15 @@
       </div>
     </div>
     <div class="btns">
-      <button @click="click++" class="btn1">
+      <button @click="click++" v-on:click="addTab" class="btn1">
         Препарат 1
       </button>
       <button @click="value++" class="btn2">
         Препарат 2
       </button>
-      <button @click="count++" class="btn3">Препарат 3</button>
+      <button @click="count++" class="btn3">
+        Препарат 3
+      </button>
     </div>
   </div>
 </template>
@@ -67,10 +69,14 @@ export default {
       count: "",
     };
   },
+  computed: {},
 
   methods: {
     reloadPage() {
       window.location.reload();
+    },
+    addTab() {
+      this.$store.dispatch("addTablet", { tab: "aspirine" });
     },
   },
 };

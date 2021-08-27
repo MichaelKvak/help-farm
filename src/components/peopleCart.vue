@@ -1,6 +1,5 @@
 <template>
   <div class="card">
-    <div class="outline" v-show="visible">Препарат</div>
     <img :src="person.img" alt="Avatar" style="width:300px" />
     <div class="container">
       <h4>
